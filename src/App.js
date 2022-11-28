@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Counter from "./components/counter";
+import Article from "./components/article";
+import "./styles.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Article />
+
+      <div className="reactions">
+        <div className="like">
+          Like:
+          <Counter start={0} />
+        </div>
+        
+        <div className="dislike">
+          Dislike:
+          <Counter start={0} />
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
